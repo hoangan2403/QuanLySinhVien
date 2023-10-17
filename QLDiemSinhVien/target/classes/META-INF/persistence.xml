@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.av_QLDiemSinhVien_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.av.pojo.Category</class>
+    <class>com.av.pojo.SaleOrder</class>
+    <class>com.av.pojo.OrderDetail</class>
+    <class>com.av.pojo.ProdTag</class>
+    <class>com.av.pojo.Tag</class>
+    <class>com.av.pojo.Product</class>
+    <class>com.av.pojo.User</class>
+    <class>com.av.pojo.Traloidiendan</class>
+    <class>com.av.pojo.Diem</class>
+    <class>com.av.pojo.Monhoc</class>
+    <class>com.av.pojo.Lophoc</class>
+    <class>com.av.pojo.Giangvien</class>
+    <class>com.av.pojo.Taikhoan</class>
+    <class>com.av.pojo.Sinhvien</class>
+    <class>com.av.pojo.Giaovu</class>
+    <class>com.av.pojo.Cauhoidiendang</class>
+    <class>com.av.pojo.Loaitaikhoan</class>
+    <class>com.av.pojo.MonhocHocky</class>
+    <class>com.av.pojo.Nganhdaotao</class>
+    <class>com.av.pojo.Khoadaotao</class>
+    <class>com.av.pojo.Monhocdangky</class>
+    <class>com.av.pojo.Khoa</class>
+    <class>com.av.pojo.Hedaotao</class>
+    <class>com.av.pojo.Hocky</class>
+    <class>com.av.pojo.Loaidiem</class>
+    <class>com.av.pojo.Phonghoc</class>
+    <class>com.av.pojo.Loaihocky</class>
+    <class>com.av.pojo.Khoadaotao_1</class>
+    <class>com.av.pojo.Hedaotao_1</class>
+    <class>com.av.pojo.Nganhdaotao_1</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/saledb?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="123456@Vi"/>
+    </properties>
+  </persistence-unit>
+</persistence>

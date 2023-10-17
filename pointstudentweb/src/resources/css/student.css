@@ -1,0 +1,613 @@
+  .text-center {
+    text-align: center;
+  }
+
+  .text-sign-in {
+    text-decoration: none;
+  }
+
+  .text-content {
+    text-align: justify;
+  }
+
+  .text-size {
+    font-size: 20px;
+  }
+
+  .nav-item-1 {
+    font-family: cursive;
+    font-size: 25px
+  }
+
+  .margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .icon-padding {
+    padding: 0 10px;
+  }
+
+  .dark-color {
+    color: black !important;
+  }
+
+  .navbar-1 {
+    background-color: lightcyan !important;
+  }
+
+  .name-text {
+    margin: 30px 10px;
+    font-weight: bold;
+  }
+
+  .text-header-tong-1 {
+    margin-left: 30px;
+    margin-top: 50px;
+    padding: 20px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: rgb(192, 218, 218);
+  }
+
+  .text-header-tong {
+    margin-left: 30px;
+    color: darkgrey;
+
+  }
+
+
+  .user-name-img {
+    margin-left: 850px;
+  }
+
+  .logo-menu {
+    height: 120px;
+    padding: 10px 5px;
+    text-align: center;
+
+  }
+
+  .header-logo {
+    color: black;
+  }
+
+  .logo-menu a {
+    line-height: 100px;
+    font-weight: bold;
+  }
+
+  .contend {
+    position: relative;
+    left: 20%;
+    width: 80%;
+  }
+
+  .contend-chat {
+    position: relative;
+    left: 20%;
+    height: 100%;
+    width: 70%;
+
+  }
+
+  .table {
+    margin-left: 30px;
+  }
+
+
+  .point-ky {
+    margin: 40px 30px;
+  }
+
+  .point-tong>li {
+    float: left;
+  }
+
+  .point {
+    margin: 20px 30px;
+  }
+
+  @keyframes modelFaceIn {
+    from {
+      transform: translateY(-130px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .show {
+    display: block !important;
+  }
+
+  .user-traloi-diendan-name {
+    margin-bottom: -10px;
+    font-size: 15px;
+  }
+
+  .traloi-diendan-user {
+    margin: 25px 20px 5px 20px;
+    border-bottom: 1px solid #666;
+  }
+
+  .close-traloi-diendan {
+    background-color: #05386B;
+    position: absolute;
+    text-decoration: none;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 8px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+  }
+
+  .btn-traloi-diendan {
+    background-color: #05386B;
+    color: aliceblue;
+    font-size: small;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+  }
+
+  .form-traloi-diendan {
+    background-color: aliceblue;
+    position: relative;
+    width: 85%;
+    padding: 25px;
+    border-radius: 10px;
+    top: 10%;
+    margin: auto;
+    max-height: 600px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    animation: modelFaceIn ease .5s;
+
+  }
+
+  .form-themcauhoi-diendan {
+    background-color: aliceblue;
+    position: relative;
+    width: 85%;
+    padding: 25px;
+    border-radius: 10px;
+    top: 10%;
+    margin: auto;
+    max-height: 790px;
+
+    animation: modelFaceIn ease .5s;
+  }
+
+  .traloi-diendan-none {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 20%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .add-contend-question {
+    position: absolute;
+    left: 80%;
+    top: 100px;
+    padding: 10px 15px;
+    color: aliceblue !important;
+    border-radius: 10px;
+    background-color: #05386B;
+  }
+
+  .content-question-noidung {
+    margin: 25px 15px;
+  }
+
+  .content-question-day {
+    margin-left: 20px;
+
+    color: #525d69;
+  }
+
+  .reply-text-link {
+    margin-left: 500px;
+  }
+
+  .text-contend-link {
+    text-decoration: none;
+    color: black;
+  }
+
+  .text-contend-link:hover {
+    color: #525d69;
+  }
+
+  .content-question {
+    border: 0.5px solid gray;
+    padding: 25px;
+    margin: 40px 0px;
+    border-radius: 10px;
+    -moz-box-shadow: -3px -3px 5px 0px #666;
+    -webkit-box-shadow: -3px -3px 5px 0px #666;
+    box-shadow: -3px -3px 5px 0px #666;
+
+  }
+
+  .update-text-diendan {
+    margin-left: 30px;
+  }
+
+  .content-diendan {
+    margin: 40px 60px;
+  }
+
+  .nav-menu {
+    height: 60px;
+  }
+
+  .spinner-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .myspinner-item {
+    position: relative;
+  }
+
+  /*Xem diem*/
+
+  .table {
+    margin-left: 30px;
+  }
+
+  .icon-padding {
+    padding: 0 10px;
+  }
+
+  .dark-color {
+    color: black !important;
+  }
+
+
+  .name-text {
+    margin: 30px 10px;
+    font-weight: bold;
+  }
+
+  .text-header-tong {
+    margin-left: 30px;
+    color: darkgrey;
+  }
+
+  .point-ky {
+    margin: 40px 30px;
+  }
+
+  .point-tong>li {
+    float: left;
+  }
+
+  .point {
+    margin: 20px 30px;
+  }
+
+
+  .logo-menu {
+    height: 120px;
+    padding: 10px 5px;
+    text-align: center;
+
+
+  }
+
+  .header-logo {
+    color: black;
+  }
+
+  .logo-menu a {
+    line-height: 100px;
+    font-weight: bold;
+  }
+
+  /*Thay doi mat khau*/
+  .btn-change-password-div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-change-password {
+    text-decoration: none;
+    border: 1px solid;
+    background: #235680;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+  }
+
+  .change-password-form {
+    width: 70%;
+    position: relative;
+    margin: 0px auto;
+  }
+
+  .change-password-title {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+
+  }
+
+  .change-password {
+    padding: 30px 20px;
+    width: 60%;
+    background-color: cadetblue;
+    position: relative;
+    margin: 70px auto;
+    border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: -3px -3px 5px 0px #666;
+    -webkit-box-shadow: -3px -3px 5px 0px #666;
+    box-shadow: -3px -3px 5px 0px #666;
+  }
+
+  /*Thog tin tai khoan*/
+  .icon-image-header {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    padding: 5px;
+  }
+
+  .info-user-image-2 {
+    display: inline-block;
+    background-color: black;
+
+    width: 100px;
+    height: 100px;
+    margin: 0 20px;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+
+  .info-user-image-3 {
+    display: inline-block;
+    background-color: black;
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+  
+
+
+  .info-user-text-reply {
+    padding: 0px 50px 50px 50px;
+  }
+
+  .info-title-user {
+    background-color: cadetblue;
+    padding: 15px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+  }
+
+  .info-private {
+    display: inline-block;
+    position: relative;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0px 0px 0px 130px;
+  }
+
+  .info-user-text2 {
+    font-weight: 470;
+  }
+
+  .info-user-texts {
+    border-bottom: 1px solid darkgrey;
+    margin: 10px 0px;
+  }
+
+  .info-user-text {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 10px 5px;
+    width: 35%;
+    display: inline-block;
+  }
+
+  .info-user-image {
+    font-size: 40px;
+    background-color: antiquewhite;
+    display: inline-block;
+    padding: 20px;
+    margin: auto 20px;
+    border-radius: 50%;
+  }
+
+  .info-user {
+    border: 1px solid gray;
+    position: relative;
+    width: 60%;
+    border-radius: 10px;
+    margin: 50px auto;
+    border-radius: 10px;
+    -moz-box-shadow: -3px -3px 5px 0px #666;
+    -webkit-box-shadow: -3px -3px 5px 0px #666;
+    box-shadow: -3px -3px 5px 0px #666;
+  }
+
+  .img-user-avatar {
+    border-radius: 50%;
+    /* Bo tròn hình ảnh */
+    width: 100px;
+    /* Điều chỉnh kích thước hình ảnh */
+    height: 100px;
+    object-fit: cover;
+    /* Đảm bảo hình ảnh không bị biến dạng */
+    display: block;
+    /* Hiển thị hình ảnh là một khối */
+    margin: 0 auto;
+  }
+
+  .img-user-avatar-header {
+    border-radius: 50%;
+    /* Bo tròn hình ảnh */
+    width: 30px;
+    /* Điều chỉnh kích thước hình ảnh */
+    height: 30px;
+    object-fit: cover;
+    /* Đảm bảo hình ảnh không bị biến dạng */
+    display: block;
+    /* Hiển thị hình ảnh là một khối */
+    margin: 0 auto;
+  }
+
+  .vertical-menu-chat {
+    background-color: #525d69;
+    margin-top: 5%;
+    margin-left: 10px;
+    border-radius: 30px;
+    width: 15%;
+    height: 80%;
+    z-index: 100;
+    position: fixed;
+    color: aliceblue;
+    display: inline-block;
+  }
+
+  .text-menu-chat {
+    margin-left: 20px;
+    margin-top: 30px;
+    font-weight: bold;
+  }
+
+  .input-chat {
+    width: 520px;
+  }
+
+  .chat-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    height: 80%;
+    border-radius: 5px;
+    -moz-box-shadow: -3px -3px 5px 0px #666;
+    -webkit-box-shadow: -3px -3px 5px 0px #666;
+    box-shadow: -3px -3px 5px 0px #666;
+  }
+
+  .header-chat-group {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .chat-header {
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0;
+    font-size: 20px;
+  }
+
+
+
+  .message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .user-name {
+    font-weight: bold;
+  }
+
+  .message-content {
+    flex-grow: 1;
+  }
+
+  .roll-nhapdiem {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .btn-themdiem-add {
+    margin-top: 36px;
+  }
+
+  .div-xemdiem-padding {
+    margin-top: 50px;
+  }
+
+  .hocphi-container {
+    padding: 30px 20px 70px 20px;
+    border-radius: 5px;
+    background-color: lightcyan;
+  }
+
+  .hocphi-div {
+    position: relative;
+    background-color: lightcyan;
+  }
+
+  .hocphi-tong {
+    position: absolute;
+    right: 24%;
+  }
+
+  .text-bold {
+    font-weight: bold;
+  }
+
+  .form-dangky-control {
+    margin-left: 50px;
+  }
+
+  .container-dangky-monhoc {
+    margin: 0 25px 0 35px;
+  }
+
+  .form-input-search-monhoc input {
+    height: 40px;
+    width: 400px;
+  }
+
+  .form-search-monhoc-dangky {
+    margin-left: 20px;
+  }
+
+  .btn-search-monhoc-dangky {
+    height: 40px;
+    margin-left: 10px;
+
+
+  }
+
+  .select-class-dangky {
+    width: 50%;
+    height: 40px;
+  }
+  .form-check-input-dangky{
+    width:100px;
+    height: 30px;
+  }

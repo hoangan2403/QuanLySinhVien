@@ -1,0 +1,339 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Aug 11, 2023, 3:43:24 AM
+    Author     : Admin
+*/
+
+
+/* 
+    css nhapdiem
+*/
+.gv-name-nhapdiem-giaovien {
+    position: absolute;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 25px
+}
+
+.gv-close-nhap-diem {
+    background-color: #05386B;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.gv-btn-luu-diem {
+    width: 70px;
+    position: absolute;
+    margin-top: 10px;
+    left: 10px;
+
+}
+
+.gv-js-nhapdiem {
+    position: absolute;
+    top: 35%;
+    left: 7%;
+    margin: 0px 15px;
+}
+
+.gv-show {
+    display: block !important;
+}
+
+.gv-container-js-nhapdiem {
+    background-color: #fff;
+    width: 900px;
+    min-height: 200px;
+    position: relative;
+    border-radius: 10px;
+    top: 30%;
+    margin: auto;
+    animation: modelFaceIn ease .4s;
+
+
+}
+
+.gv-display-form-diem {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 20%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+
+}
+.gv-container-nhapdiem-giaovien{
+    margin: 20px 20px;
+}
+
+@keyframes modelFaceIn {
+    from {
+        transform: translateY(-130px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* 
+    css inddex
+*/
+a{
+    text-decoration: none;
+}
+.gv-item-monhoc-giaovien-text{
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+    color: black;
+
+}
+.gv-item-monhoc-giaovien-text:hover{
+    color: gray;
+}
+.gv-monhoc-giaovien{
+    margin: 40px 0px 50px 80px;
+    align-items: center;
+
+}
+.gv-image-monhoc-giaovien {
+    width: 100%;
+    transition: transform 0.7s ease;
+
+}
+.gv-image-monhoc-giaovien:hover{
+    transform: scale(1.1);
+
+}
+.gv-item-monhoc-giaovien {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gv-items-monhoc-giaovien {
+    width: 28%;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+}
+
+/* 
+    css base
+*/
+.gv-btn-search-student {
+    border-radius: 10px;
+    border: #05386B;
+    background-color: #05386B;
+    color: aliceblue;
+    margin-left: 10px;
+}
+
+.gv-btn-search-student:hover {
+    background-color: #0d6097;
+}
+
+
+.gv-item-name {
+    position: relative;
+
+
+}
+
+.gv-icon-padding {
+    padding: 0 10px;
+}
+
+.gv-dark-color {
+    color: black !important;
+}
+
+
+.gv-name-text {
+    margin: 30px 10px;
+    font-weight: bold;
+}
+
+.gv-text-header-tong {
+    margin-left: 30px;
+    color: darkgrey;
+}
+
+.gv-point-ky {
+    margin: 40px 30px;
+}
+
+.gv-point-tong>li {
+    float: left;
+}
+
+.gv-point {
+    margin: 20px 30px;
+}
+
+.gv-user-name-img {
+    margin-left: 90px;
+}
+
+.gv-logo-menu {
+    height: 120px;
+    padding: 10px 5px;
+    text-align: center;
+
+
+}
+
+.gv-header-logo {
+    color: black;
+}
+
+.gv-logo-menu a {
+    line-height: 100px;
+    font-weight: bold;
+}
+
+.gv-contend {
+    position: relative;
+    left: 20%;
+    width: 80%;
+}
+
+.gv-vertical-menu {
+    background-color: #05386B !important;
+    width: 20%;
+    height: 100%;
+    z-index: 100;
+    position: fixed;
+    color: aliceblue;
+    display: inline-block;
+    /* Set a width if you like */
+}
+
+.gv-text-menu {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.gv-vertical-menu a {
+
+
+
+    /* Grey background color */
+
+    /* Black text color */
+    display: block;
+    /* Make the links appear below each other */
+    /* Add some padding */
+    text-decoration: none;
+    /* Remove underline from links */
+}
+
+.menu-item:hover {
+    background-color: darkgrey;
+    color: aliceblue;
+
+}
+
+.menu-item {
+    padding: 10px 30px;
+    color: aliceblue;
+
+}
+
+.menu-items {
+    margin-bottom: 35px;
+}
+
+.gv-dropdown-menu {
+    background-color: lightcyan;
+}
+
+.btn-creat-pdf{
+    margin-left: 80%;
+}
+
+.btn-search-student {
+    border-radius: 10px;
+    border: #05386B;
+    background-color: #05386B;
+    color: aliceblue;
+    margin-left: 10px;
+}
+
+.btn-search-student:hover {
+    background-color: #0d6097;
+}
+
+.Search-student {
+    width: 300px;
+    margin-left: 470px;
+
+}
+
+.student-info-ad{
+    position: relative;
+    margin: 40px ;
+    width: 400px;
+    padding: 20px 30px;
+    border-radius: 5px;
+    border: #000000 solid;
+}
+
+/* CSS cho Form.Control của chọn tệp */
+.custom-file-input {
+    cursor: pointer; /* Biểu tượng con trỏ tay khi di chuyển qua nút */
+    padding: 5px; /* Khoảng cách xung quanh phần input */
+    border: 1px solid #ced4da; /* Viền xung quanh input */
+    border-radius: 5px; /* Góc bo tròn */
+    width: 250px;
+  }
+  
+  /* Định dạng văn bản cho tên tệp đã chọn */
+  .custom-file-label::after {
+    content: "Chọn tệp"; /* Chữ mặc định hiển thị trước khi chọn tệp */
+  }
+  
+  /* Định dạng văn bản cho tên tệp đã chọn sau khi đã chọn tệp */
+  .custom-file-label[data-browse]:after {
+    content: "Thay đổi tệp"; /* Hiển thị khi đã chọn tệp */
+  }
+  
+  /* Thay đổi màu nền và màu chữ khi hover qua input */
+  .custom-file-input:hover {
+    background-color: #e9ecef; /* Màu nền khi hover */
+  }
+  
+  /* Thay đổi màu viền khi focus vào input */
+  .custom-file-input:focus {
+    border-color: #4e9cff; /* Màu viền khi focus */
+    box-shadow: none; /* Loại bỏ shadow */
+  }
+  
+  /* Ẩn mũi tên mặc định của input type="file" */
+  .custom-file-input::-webkit-file-upload-button {
+    display: none;
+  }
+  
+  /* Định dạng văn bản cho tên tệp đã chọn sau khi đã chọn tệp (cho Safari) */
+  .custom-file-input::-webkit-file-upload-button:active {
+    background-color: transparent;
+    border: 0;
+  }
+.btn-add-delete-diem{
+    margin:10px 10px 50px 10px;
+
+}
+

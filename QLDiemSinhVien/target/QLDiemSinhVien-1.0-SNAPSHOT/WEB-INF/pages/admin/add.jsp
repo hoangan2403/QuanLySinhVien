@@ -26,16 +26,16 @@
                 <form:hidden path="idSinhVien"/>
                 <form:hidden path="idTaiKhoan"/>
                 <div class="form-floating mb-3 mt-3">
-                    <form:input type="text" class="form-control" path="hoTen" id="name" placeholder="Họ và tên" name="name"  required="true"/>
+                    <form:input type="text" class="form-control" path="hoTen" id="name" placeholder="Họ và tên" name="name"  required="required"/>
                     <label for="name">Họ và tên</label>
                 </div>
                 
                 <div class="form-floating mt-3 mb-3">
-                    <form:input type="date" class="form-control" path="ngaySinh" id="dateofbirth" placeholder="Ngày sinh" name="dateofbirth"  required="true"/>
+                    <form:input type="date" class="form-control" path="ngaySinh" id="dateofbirth" placeholder="Ngày sinh" name="dateofbirth"  required="required"/>
                     <label for="dateofbirth">Ngày sinh</label>
                 </div>
                 <div class="form-floating mt-3 mb-3">
-                    <form:input type="text" class="form-control" path="diaChi" id="address" placeholder="Địa chỉ " name="address" required="true"/>
+                    <form:input type="text" class="form-control" path="diaChi" id="address" placeholder="Địa chỉ " name="address" required="required"/>
                     <label for="address">Địa chỉ</label>
                 </div>
                 <div class="form-floating mt-3 mb-3">
@@ -47,7 +47,7 @@
                     <label for="sex">Giới tính</label>
                 </div>
                 <div class="form-floating mt-3 mb-3">
-                    <form:select class="form-select" id="class" name="class" path="maLop">
+                    <form:select class="form-select" id="class" name="class" path="maLop" required="required">
                         <c:forEach items="${listLopHoc}" var="lh">
                             <c:choose>
                                 <c:when test="${lh.idLopHoc == sinhvienn.maLop.idLopHoc}">
@@ -62,11 +62,11 @@
                     <label for="class">Danh sách lớp học</label>                
                 </div>    
                 <div class="form-floating mt-3 mb-3">
-                    <form:input type="text" class="form-control" path="soDienThoai" id="phonenumber" placeholder="Số điện thoại" name="phonenumber"  required="true"/>
+                    <form:input type="text" class="form-control" path="soDienThoai" id="phonenumber" placeholder="Số điện thoại" name="phonenumber"  required="required"/>
                     <label for="phonenumber">Số điện thoại</label>
                 </div>
                 <div class="form-floating mt-3 mb-3">
-                    <form:input type="email" class="form-control" path="email" id="email" placeholder="Email" name="email"  required="true"/>
+                    <form:input type="email" class="form-control" path="email" id="email" placeholder="Email" name="email"  required="required"/>
                     <label for="email">Email</label>
                 </div>
                 <div class="btn-form-addsv">

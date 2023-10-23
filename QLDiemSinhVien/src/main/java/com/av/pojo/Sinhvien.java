@@ -84,7 +84,7 @@ public class Sinhvien implements Serializable {
     private Taikhoan idTaiKhoan;
 
     @Transient
-    private int maXacNhan;
+    private static int maXacNhan;
     
     public Sinhvien() {
     }

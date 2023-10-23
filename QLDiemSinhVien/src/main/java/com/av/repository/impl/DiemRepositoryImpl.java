@@ -18,10 +18,8 @@ import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import java.util.Locale;
 import java.util.Map;
-
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
@@ -70,7 +68,7 @@ public class DiemRepositoryImpl implements DiemRepository {
         Expression<Double> averageDiemTrungBinh = b.avg(rDiem.get("soDiem"));
         Expression<Double> averageDiemTrungBinh4 = b.prod(b.avg(rDiem.get("soDiem")), 0.4);
         q.multiselect(
-                rMonHocHocKy.get("idHocky").get("tenHocKy"),
+                rMonHocHocKy.get("idHocky").get("tenHocKy").get("tenHocKy"),
                 averageDiemTrungBinh,
                 averageDiemTrungBinh4
         )
@@ -78,7 +76,6 @@ public class DiemRepositoryImpl implements DiemRepository {
 //                .groupBy(rMonHocHocKy.get("idMonHocHocKy").get("idHocKY"));
 
         Query query = session.createQuery(q);
-
         try {
             return query.getResultList();
         } catch (NoResultException | NonUniqueResultException ex) {
@@ -121,6 +118,7 @@ public class DiemRepositoryImpl implements DiemRepository {
         }
     }
 
+    
     @Override
     public double getDiemTrungBinhHe4(Map<String, String> params) {
         Session s = this.factory.getObject().getCurrentSession();
@@ -163,9 +161,7 @@ public class DiemRepositoryImpl implements DiemRepository {
 
         CriteriaBuilder b = session.getCriteriaBuilder();
         CriteriaQuery<Diem> q = b.createQuery(Diem.class);
-        Root<Diem> rDiem = q.from(Diem.class);
-        Root<Monhocdangky> rMonHocDangKy = q.from(Monhocdangky.class);
-        String sinhvienId = params.get("SinhVienId");
+        
         List<Monhocdangky> monHocList = this.getListMonHocDangKy(params);
         List<DiemMonHoc> monHocDiemList = new ArrayList<>();
 

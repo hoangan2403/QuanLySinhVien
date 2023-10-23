@@ -28,7 +28,7 @@ function deleteMonHoc(path) {
             if (res.status === 204)
                 location.reload();
             else
-                alert("Xóa môn học không được vì môn còn đang học ");
+                alert("Xóa môn học không thành công vì một số lớp đang mở môn này !! ");
         });
     }
 }
@@ -40,7 +40,7 @@ function deleteLopHoc(path) {
             if (res.status === 204)
                 location.reload();
             else
-                alert("Xóa thất bại vì lớp học còn đang học");
+                alert("Xóa thất bại vì lớp học còn một số sinh viên đang học !!");
         });
     }
 }

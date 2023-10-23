@@ -24,7 +24,7 @@
             <form:form method="post" modelAttribute="khoahocc" action="${action}">
                 <form:hidden path="idkhoa"/>
                 <div class="form-floating mb-3 mt-3">
-                    <form:input type="text" path="tenKhoa" class="form-control" id="name" placeholder="Tên khóa học" name="name" required="true"/>
+                    <form:input type="text" path="tenKhoa" class="form-control" id="name" placeholder="Tên khóa học" name="name" required="required"/>
                     <label for="name">Tên khóa học</label>
                 </div>
                 <div class="btn-form-addsv">

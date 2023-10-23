@@ -31,7 +31,7 @@
             <form:form method="post" modelAttribute="lophoc" action="${action}" >
                 <form:hidden path="idLopHoc"/>
                 <div class="form-floating mb-3 mt-3">
-                    <form:input type="text" path="tenLopHoc" class="form-control" id="name" placeholder="Tên lớp học" name="name" required="true"/>
+                    <form:input type="text" path="tenLopHoc" class="form-control" id="name" placeholder="Tên lớp học" name="name" required="required"/>
                     <label for="name">Tên lớp học</label>
                 </div>
 
@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-floating mt-3 mb-3">
 
-                    <form:select class="form-select" id="class" name="class" path="idHeDaoTao" required="true">
+                    <form:select class="form-select" id="class" name="class" path="idHeDaoTao" required="required">
                         <c:forEach items="${hedaotao}" var="hdt">
                             <c:choose>
                                 <c:when test="${hdt.idhedaotao == lophoc.idHeDaoTao.idhedaotao}">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-floating mt-3 mb-3">
 
-                    <form:select class="form-select" id="class" name="class" path="idNganh" required="true">
+                    <form:select class="form-select" id="class" name="class" path="idNganh" required="required">
                         <c:forEach items="${nghanhdaotao}" var="ndt">
                             <c:choose>
                                 <c:when test="${ndt.idNganhDaoTao == lophoc.idNganh.idNganhDaoTao}">

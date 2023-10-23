@@ -31,7 +31,7 @@
                 <form:form method="post" modelAttribute="loaitaikhoann" action="${action}">
                     <form:hidden path="idloaitaikhoan"/>
                     <div class="form-floating mb-3 mt-3">
-                        <form:input type="text" path="tenloaitaikhoan" class="form-control" id="name" placeholder="Tên loại tài khoản" name="name"/>
+                        <form:input type="text" path="tenloaitaikhoan" class="form-control" id="name" placeholder="Tên loại tài khoản" name="name" required="required"/>
                         <label for="name">Tên loại tài khoản</label>
                     </div>
                     <div class="btn-form-addsv">

@@ -17,7 +17,7 @@
             <form:form method="post" modelAttribute="phonghocc" action="${action}">
                 <form:hidden path="idPhongHoc"/>
                 <div class="form-floating mb-3 mt-3">
-                    <form:input type="text" path="tenPhongHoc" class="form-control" id="name" placeholder="Tên phòng học" name="name" required="true"/>
+                    <form:input type="text" path="tenPhongHoc" class="form-control" id="name" placeholder="Tên phòng học" name="name" required="required"/>
                     <label for="name">Tên phòng học</label>
                 </div>
                 <div class="btn-form-addsv">

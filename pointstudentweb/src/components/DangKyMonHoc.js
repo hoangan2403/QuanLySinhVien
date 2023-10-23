@@ -64,14 +64,17 @@ const DangKyMonHoc = () => {
                 formData.append("trans_date", trans_date);
                 let res2 = await AuthApis().post(thanhToan, formData);
                 setXacNhanThanhToan(res2.data);
-                // if(res2.status !== 200){
-                //     setSuccessThanhToan(false);
-                // }
+                if(res2.status === 200){
+                    alert("Thanh toán thành công.")
+                }
+                else{
+                    alert("Thanh toán thất bại.")
+                }
                 window.close();
-                
-            }             
+
+            }
         }
-        
+
         loadloadDSMonHocHocKy();
         xacNhanThanhToann();
     }, [success, selectedLop, kw, DSmonHocDangKy])
@@ -127,196 +130,216 @@ const DangKyMonHoc = () => {
     }
 
     return (
-        <div class="contend">
-            <HeaderSV />
-            <div class="point">
-                <h4 class="text-bold">Đăng Ký Môn Học Học Kỳ 1 - Khóa 2020 {xacNhanThanhToan.vnp_TransactionStatus}</h4>
-                <div class="mt-4 mb-3 ">
-                    <div class="form-dangky-control">
-                        <h6 >Chọn lớp môn học </h6>
-                        <div class="d-flex">
+        <>
+            <div class="contend">
+                <HeaderSV />
+                <div class="point">
+                    <h4 class="text-bold">Đăng Ký Môn Học Hoc Kỳ</h4>
+                    <div class="mt-4 mb-3 ">
+                        <div class="form-dangky-control">
+                            <h6 >Chọn lớp môn học </h6>
+                            <div class="d-flex">
 
-                            <Form.Select aria-label="Default select example select-class-dangky"
-                                onChange={(e) => setSelectedLop(e.target.value)}
-                                value={selectedLop}
-                            >
+                                <Form.Select aria-label="Default select example select-class-dangky"
+                                    onChange={(e) => setSelectedLop(e.target.value)}
+                                    value={selectedLop}
+                                >
 
-                                <option>Tất Cả</option>
-                                {DSLopHoc.map(c => {
-                                    return (
-                                        <option key={c.idLopHoc} value={c.idLopHoc}>{c.tenLopHoc}</option>
-                                    )
-                                })}
+                                    <option>Tất Cả</option>
+                                    {DSLopHoc.map(c => {
+                                        return (
+                                            <option key={c.idLopHoc} value={c.idLopHoc}>{c.tenLopHoc}</option>
+                                        )
+                                    })}
 
-                            </Form.Select>
+                                </Form.Select>
 
-                            <div class="form-input-search-monhoc">
-                                <Form onSubmit={search} className="d-flex form-search-monhoc-dangky ">
-                                    <Form.Control
-                                        type="text"
-                                        required
-                                        value={kw}
-                                        name="kw"
-                                        onChange={e => setKw(e.target.value)}
-                                        placeholder="Nhập tên môn học"
-                                        className="mr-2"
-                                    />
-                                    <Button type="submit" className="btn-search-student">Tìm</Button>
-                                </Form>
+                                <div class="form-input-search-monhoc">
+                                    <Form onSubmit={search} className="d-flex form-search-monhoc-dangky ">
+                                        <Form.Control
+                                            type="text"
+                                            required
+                                            value={kw}
+                                            name="kw"
+                                            onChange={e => setKw(e.target.value)}
+                                            placeholder="Nhập tên môn học"
+                                            className="mr-2"
+                                        />
+                                        <Button type="submit" className="btn-search-student">Tìm</Button>
+                                    </Form>
+                                </div>
+
                             </div>
-
                         </div>
-                    </div>
 
-                    <div class="container-dangky-monhoc mt-3">
-                        <h5 class="text-bold">Đăng Ký Môn</h5>
-                        <p class="text-header-tong">Danh sách môn học mở cho đăng ký</p>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Tên Môn Học</th>
-                                    <th>Lớp</th>
-                                    <th>Giảng Viên</th>
-                                    <th>Số Lượng</th>
-                                    <th>Còn Lại</th>
-                                    <th>Thời khóa Biểu</th>
-                                    <th>Đăng Ký</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {DSmonHocHocKy.map(c => {
-                                    var test = 0;
-                                    return (<tr key={c.idMonHocHocKy}>
-                                        <td>{c.idMonHoc.tenMonHoc}</td>
-                                        <td>{c.idHocky.idLop.tenLopHoc}</td>
-                                        <td>{c.idGiangVien.hoTen}</td>
-                                        <td>{c.soLuong}</td>
-                                        <td>{c.soLuongConLai}</td>
-                                        <td>-</td>
+                        <div class="container-dangky-monhoc mt-3">
+                            <h5 class="text-bold">Đăng Ký Môn</h5>
+                            <p class="text-header-tong">Danh sách môn học mở cho đăng ký</p>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Tên Môn Học</th>
+                                        <th>Lớp</th>
+                                        <th>Giảng Viên</th>
+                                        <th>Số Lượng</th>
+                                        <th>Còn Lại</th>
+                                        <th>Thời Gian</th>
+                                        <th>Đăng Ký</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {DSmonHocHocKy.map(c => {
+                                        var test = 0;
+                                        var ngayBatDauDate = new Date(c.ngayBatDau);
+                                        var nagyKetThucDate = new Date(c.ngayKetThuc);
+                                        var options = { 
+                                            year: 'numeric', 
+                                            month: '2-digit', 
+                                            day: '2-digit', 
+                                          };
+                                          var ngayBatDauFormatted = ngayBatDauDate.toLocaleString('en-GB', options);
+                                          var ngayKetThucFormatted = nagyKetThucDate.toLocaleString('en-GB', options);
 
-                                        <td>
-                                            {DSmonHocDangKy.map(b => {
-                                                if (b.idMonHoc.idMonHocHocKy === c.idMonHocHocKy) {
-                                                    test = test + 1;
-                                                    return (
-                                                        <>
-                                                            <InputGroup className="mb-1 form-check-input-dangky">
-                                                                <InputGroup.Checkbox disabled={b.thanhToan=== 1} checked onChange={(e) => {
-                                                                    if (e.target.checked) {
+                                        return (<tr key={c.idMonHocHocKy}>
+                                            <td>{c.idMonHoc.tenMonHoc}</td>
+                                            <td>{c.idHocky.idLop.tenLopHoc}</td>
+                                            <td>{c.idGiangVien.hoTen}</td>
+                                            <td>{c.soLuong}</td>
+                                            <td>{c.soLuongConLai}</td>
+                                            <td>{ngayBatDauFormatted} - {ngayKetThucFormatted}</td>
 
-                                                                        dangKy(e, c.idMonHocHocKy);
-                                                                    } else {
+                                            <td>
+                                                {DSmonHocDangKy.map(b => {
+                                                    if (b.idMonHoc.idMonHocHocKy === c.idMonHocHocKy) {
+                                                        test = test + 1;
+                                                        return (
+                                                            <>
+                                                                <InputGroup className="mb-1 form-check-input-dangky">
+                                                                    <InputGroup.Checkbox disabled={b.thanhToan === 1} checked onChange={(e) => {
+                                                                        if (e.target.checked) {
 
-                                                                        huyDangKy(e, c.idMonHocHocKy);
-                                                                    }
-                                                                }} />
-                                                            </InputGroup>
-                                                        </>
-                                                    )
-                                                }
-                                            })
-                                            }
-                                            {test === 0 ? <><InputGroup className="mb-1 form-check-input-dangky">
-                                                <InputGroup.Checkbox disabled={c.soLuongConLai === 0} onChange={(e) => {
-                                                    if (e.target.checked) {
+                                                                            dangKy(e, c.idMonHocHocKy);
+                                                                        } else {
 
-                                                        dangKy(e, c.idMonHocHocKy);
-                                                    } else {
-
-                                                        huyDangKy(e, c.idMonHocHocKy);
+                                                                            huyDangKy(e, c.idMonHocHocKy);
+                                                                        }
+                                                                    }} />
+                                                                </InputGroup>
+                                                            </>
+                                                        )
                                                     }
-                                                }} />
-                                            </InputGroup></> : <></>}
+                                                })
+                                                }
+                                                {test === 0 ? <><InputGroup className="mb-1 form-check-input-dangky">
+                                                    <InputGroup.Checkbox disabled={c.soLuongConLai === 0} onChange={(e) => {
+                                                        if (e.target.checked) {
+
+                                                            dangKy(e, c.idMonHocHocKy);
+                                                        } else {
+
+                                                            huyDangKy(e, c.idMonHocHocKy);
+                                                        }
+                                                    }} />
+                                                </InputGroup></> : <></>}
 
 
-                                        </td>
-                                    </tr>
-                                    )
-                                })
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="container-dangky-monhoc mt-5 ">
-                        <h5 class="text-bold">Môn Học Đăng Ký</h5>
-                        <p class="text-header-tong">Danh sách môn học đã đăng ký</p>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Tên Môn Học</th>
-                                    <th>Lớp</th>
-                                    <th>Giảng Viên</th>
-                                    <th>Thời khóa Biểu</th>
-                                    <th>Hủy</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {DSmonHocDangKy.map(c => {
-                                    return (<tr key={c.idMonHoc.idMonHocHocKy}>
-                                        <td>{c.idMonHoc.idMonHoc.tenMonHoc}</td>
-                                        <td>{c.idMonHoc.idHocky.idLop.tenLopHoc}</td>
-                                        <td>{c.idMonHoc.idGiangVien.hoTen}</td>
-                                        <td>-</td>
-                                        <td>
-                                            {c.thanhToan !== 1 ? <Button onClick={(e) => {
-                                                huyDangKy(e, c.idMonHoc.idMonHocHocKy);
-                                            }} className="btn-search-student">Xóa</Button> : <></>}
-
-                                        </td>
-                                    </tr>
-                                    )
-                                })
-                                }
-                            </tbody>
-                        </table>
-
-                    </div>
-                    <div class="container-dangky-monhoc mt-5 ">
-                        <h5 class="text-bold">Học Phí</h5>
-                        <p class="text-header-tong">Danh Sách Học Phí Môn Học Đã Đăng Ký Trong Học Kì</p>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Tên Môn Học</th>
-                                    <th>Tín Chỉ</th>
-                                    <th>Học Phí</th>
-                                    <th>Tình Trạng</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {DSmonHocDangKy.map(c => {
-                                    var value = c.idMonHoc.idMonHoc.soTinChi * 700000;
-                                    var formattedValue = new Intl.NumberFormat('vi-VN').format(value);
-                                    if(c.thanhToan!==1){
-                                        hocphi = hocphi + value;
+                                            </td>
+                                        </tr>
+                                        )
+                                    })
                                     }
-                                    
-                                    return (<tr key={c.idMonHoc.idMonHocHocKy}>
-                                        <td>{c.idMonHoc.idMonHoc.tenMonHoc}</td>
-                                        <td>{c.idMonHoc.idMonHoc.soTinChi}</td>
-                                        <td>{formattedValue}</td>
-                                        {c.thanhToan === 1 ? <td>Đã thanh toán</td> : <td>Chưa Thanh Toán</td>}
-
-                                    </tr>
-                                    )
-                                })
-                                }
-                            </tbody>
-                        </table>
-                        <div class="hocphi-container">
-                            <div class="d-flex hocphi-div">
-                                <h5 class="text-bold">Tổng tiền: </h5>
-                                <p class="hocphi-tong text-bold">{new Intl.NumberFormat('vi-VN').format(hocphi)} VNĐ</p>
-                            </div>
-                            <div class="hocphi-div">
-                                <Button type="button" onClick={(e) => thanhToan(e, hocphi)} className="btn btn-success hocphi-tong mt-2">Thanh Toán</Button>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
-                   
+                        <div class="container-dangky-monhoc mt-5 ">
+                            <h5 class="text-bold">Môn Học Đăng Ký</h5>
+                            <p class="text-header-tong">Danh sách môn học đã đăng ký</p>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Tên Môn Học</th>
+                                        <th>Lớp</th>
+                                        <th>Giảng Viên</th>
+                                        <th>Ngày Bắt Đầu</th>
+                                        <th>Hủy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {DSmonHocDangKy.map(c => {
+                                        
+                                        
+                                        return (<tr key={c.idMonHoc.idMonHocHocKy}>
+                                            <td>{c.idMonHoc.idMonHoc.tenMonHoc}</td>
+                                            <td>{c.idMonHoc.idHocky.idLop.tenLopHoc}</td>
+                                            <td>{c.idMonHoc.idGiangVien.hoTen}</td>
+                                            <td>-</td>
+                                            <td>
+                                                {c.thanhToan !== 1 ? <Button onClick={(e) => {
+                                                    huyDangKy(e, c.idMonHoc.idMonHocHocKy);
+                                                }} className="btn-search-student">Xóa</Button> : <></>}
+
+                                            </td>
+                                        </tr>
+                                        )
+                                    })
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="container-dangky-monhoc mt-5 ">
+                            <h5 class="text-bold">Học Phí</h5>
+                            <p class="text-header-tong">Danh Sách Học Phí Môn Học Đã Đăng Ký Trong Học Kì</p>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Tên Môn Học</th>
+                                        <th>Tín Chỉ</th>
+                                        <th>Học Phí</th>
+                                        <th>Tình Trạng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {DSmonHocDangKy.map(c => {
+                                        var value = c.idMonHoc.idMonHoc.soTinChi * 700000;
+                                        var formattedValue = new Intl.NumberFormat('vi-VN').format(value);
+                                        if (c.thanhToan !== 1) {
+                                            hocphi = hocphi + value;
+                                        }
+
+                                        return (<tr key={c.idMonHoc.idMonHocHocKy}>
+                                            <td>{c.idMonHoc.idMonHoc.tenMonHoc}</td>
+                                            <td>{c.idMonHoc.idMonHoc.soTinChi}</td>
+                                            <td>{formattedValue}</td>
+                                            {c.thanhToan === 1 ? <td>Đã thanh toán</td> : <td>Chưa Thanh Toán</td>}
+
+                                        </tr>
+                                        )
+                                    })
+                                    }
+                                </tbody>
+                            </table>
+                            <div class="hocphi-container">
+                                <div class="d-flex hocphi-div">
+                                    <h5 class="text-bold">Tổng tiền: </h5>
+                                    <p class="hocphi-tong text-bold">{new Intl.NumberFormat('vi-VN').format(hocphi)} VNĐ</p>
+                                </div>
+                                <div class="hocphi-div">
+                                    <Button type="button" onClick={(e) => thanhToan(e, hocphi)} className="btn btn-success hocphi-tong mt-2">Thanh Toán</Button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        
+       
+        </>
+
+
+
     )
+
 }
 export default DangKyMonHoc;

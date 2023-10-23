@@ -42,7 +42,7 @@ const CTMonHoc = () => {
                 });
                 //Loc điểm theo idMonHoc, Id SinhVien, tên Sinh Vien
                 if (monHocId !== null) {
-                    if (tenSinhVien !== null) {
+                    if (tenSinhVien !== null && tenSinhVien !=='') {
                         e = `${e}?monHocId=${monHocId}&tenSinhVien=${tenSinhVien}`;
                         let res = await AuthApis().post(e);
                         setDSSinhVien(res.data);
@@ -54,10 +54,11 @@ const CTMonHoc = () => {
                         setDSSinhVien(res.data);
                         const data = res.data;
                         const hasKhoaDiemZero = data.some(sinhvien => sinhvien.khoaMon === 1);
-
-
                         if (hasKhoaDiemZero) {
                             setCheckKhoaDiem(false);
+                        }
+                        else{
+                            setCheckKhoaDiem(true);
                         }
                     }
 
@@ -231,9 +232,9 @@ const CTMonHoc = () => {
                                     <tr>
                                         <th>Mã sinh viên</th>
                                         <th>Họ và tên</th>
-                                        {DSSinhVien[0].diemKT1 === -1 ? <></> : <th>Điểm KT 1</th>}
-                                        {DSSinhVien[0].diemKT2 === -1 ? <></> : <th>Điểm KT 2</th>}
-                                        {DSSinhVien[0].diemKT3 === -1 ? <></> : <th>Điểm KT 3</th>}
+                                        {DSSinhVien[0].diemKT1 === -1 ? <></> : <th>Điểm 1(10%)</th>}
+                                        {DSSinhVien[0].diemKT2 === -1 ? <></> : <th>Điểm 2(10%)</th>}
+                                        {DSSinhVien[0].diemKT3 === -1 ? <></> : <th>Điểm 3(10%)</th>}
                                         <th>Điểm Giữa Kỳ</th>
                                         <th>Điểm Cuối Kỳ</th>
                                         <th>Điểm Trung Bình</th>

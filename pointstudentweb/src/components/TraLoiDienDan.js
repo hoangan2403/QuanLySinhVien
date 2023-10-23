@@ -24,7 +24,6 @@ const TraLoiDienDan = () => {
                     e = `${e}?cauhoiId=${cauhoiid}`;
                 }
                 let res = await AuthApis().get(e);
-
                 setCauTraLoi(res.data);
             } catch (ex) {
                 console.error(ex);

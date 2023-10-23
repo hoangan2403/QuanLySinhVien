@@ -22,20 +22,20 @@
             <div class="text-form-addSV">
                 <form:form modelAttribute="dangki" method="post" action="${action}">
                     <div class="form-floating mb-3 mt-3">
-                        <form:input type="text" class="form-control text-size" path="tenTaiKhoan" id="username" placeholder="Email" name="username" />
+                        <form:input type="email" class="form-control text-size" path="tenTaiKhoan" id="username" placeholder="Email" name="username" required="required"/>
                         <label for="username">Email</label>
                     </div>
                     <div class="form-floating mb-3 mt-3">
-                        <form:input type="password" class="form-control text-size" path="matKhau" id="password" placeholder="Mật khẩu" name="password" />
+                        <form:input type="password" class="form-control text-size" path="matKhau" id="password" placeholder="Mật khẩu" name="password" required="required"/>
                         <label for="password">Mật khẩu</label>
                     </div>
                     <div class="form-floating mb-3 mt-3">
-                        <form:input type="password" class="form-control text-size" path="xacNhanMk" id="cfpw" placeholder="Nhập lại mật khẩu" name="cfpw" />
+                        <form:input type="password" class="form-control text-size" path="xacNhanMk" id="cfpw" placeholder="Nhập lại mật khẩu" name="cfpw" required="required"/>
                         <label for="cfpw">Nhập lại mật khẩu</label>
                     </div>
                     <div class="form-floating mb-3 mt-3">
 
-                        <form:select class="form-select" id="teacher" name="teacher" path="giangvien1">
+                        <form:select class="form-select" id="teacher" name="teacher" path="giangvien1" required="required">
                             <c:forEach items="${giangvien}" var="gv">
                                 <c:if test="${gv.idTaiKhoan == null}">
                                     <option value="${gv.idGiangVien}">${gv.hoTen}</option>

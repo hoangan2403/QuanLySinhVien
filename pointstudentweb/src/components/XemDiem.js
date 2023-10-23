@@ -1,12 +1,10 @@
-import { MyUserConText, SinhVienContext } from "../App";
+import { SinhVienContext } from "../App";
 import { useContext, useEffect, useState } from "react";
 import { AuthApis, endpoints } from "../configs/Apis";
-import MySpinner from "../layout/MySpinner";
 import HeaderSV from "../layout/sinhvien/HeaderSV"
 
 
 const XemDiem = () => {
-    const [user, dispatch] = useContext(MyUserConText);
     const [sinhvien] = useContext(SinhVienContext);
     const [DSDiem, setDSDiem] = useState([], null);
     const [DSDiemDaHoc, setDSDiemDaHoc] = useState([], null);
@@ -97,7 +95,7 @@ const XemDiem = () => {
                         </thead>
                         <tbody >
                             {DSDiem1.map(c => <tr key={c[2]}>
-                                <td>{c[0].tenHocKy}</td>
+                                <td>{c[0]}</td>
                                 <td>{parseFloat(c[1]).toFixed(2)}</td>
                                 <td>{parseFloat(c[2]).toFixed(2)}</td>
 
@@ -136,7 +134,6 @@ const XemDiem = () => {
                                         <td>{c.diemGK}</td>
                                         <td>{c.diemCK}</td>
                                         {c.diemTB !== null ? <td>{parseFloat(c.diemTB).toFixed(2)}</td> : <td>chưa có</td>}
-
                                         <td>Đang Học</td>
                                     </tr>
                                     )

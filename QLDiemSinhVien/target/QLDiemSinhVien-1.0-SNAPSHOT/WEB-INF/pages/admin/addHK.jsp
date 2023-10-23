@@ -24,7 +24,7 @@
             <form:form modelAttribute="hocki" action="${action}" method="post">
                 <form:hidden path="idHocKy"/>
                 <div class="form-floating mt-3 mb-3">
-                    <form:select class="form-select" id="class" name="class" path="tenHocKy" required="true">
+                    <form:select class="form-select" id="class" name="class" path="tenHocKy" required="required">
                         <c:forEach items="${loaihocki}" var="lhk">
                             <c:choose>
                                 <c:when test="${lhk.idLoaiHocKy == hocki.tenHocKy.idLoaiHocKy}">
@@ -39,24 +39,24 @@
                     <label for="class">Danh mục học kì</label> 
                 </div>
                 <div class="form-floating mt-3 mb-3">
-                    <form:input type="date" path="ngayDangKy" class="form-control" id="datedk" placeholder="Ngày đăng ký" name="date" required="true"/>
+                    <form:input type="date" path="ngayDangKy" class="form-control" id="datedk" placeholder="Ngày đăng ký" name="date" required="required"/>
                     <label for="datedk">Ngày đăng ký</label>
                 </div>
                 <div class="form-floating mt-3 mb-3">
-                    <form:input type="date" path="ngayHetHan" class="form-control" id="datehh" placeholder="Ngày hết hạn" name="date" required="true"/>
+                    <form:input type="date" path="ngayHetHan" class="form-control" id="datehh" placeholder="Ngày hết hạn" name="date" required="required"/>
                     <label for="datehh">Ngày hết hạn</label>
                 </div>
                 <div class="form-floating mt-3 mb-3">
-                    <form:input  type="date" path="ngayBatDau" class="form-control" id="datebd" placeholder="Ngày bắt đầu" name="date" required="true"/>
+                    <form:input  type="date" path="ngayBatDau" class="form-control" id="datebd" placeholder="Ngày bắt đầu" name="date" required="required"/>
                     <label for="datebd">Ngày bắt đầu</label>
                 </div>
                 <div class="form-floating mt-3 mb-3">
-                    <form:input  type="date" path="ngayKetThuc" class="form-control" id="datekt" placeholder="Ngày kết thúc" name="date" required="true"/>
+                    <form:input  type="date" path="ngayKetThuc" class="form-control" id="datekt" placeholder="Ngày kết thúc" name="date" required="required"/>
                     <label for="datekt">Ngày kết thúc</label>
                 </div>
 
                 <div class="form-floating mt-3 mb-3">
-                    <form:select class="form-select" id="classlh" name="class" path="idLop" required="true">
+                    <form:select class="form-select" id="classlh" name="class" path="idLop" required="required">
                         <c:forEach items="${listLopHoc}" var="lh">
                             <c:choose>
                                 <c:when test="${lh.idLopHoc == hocki.idLop.idLopHoc}">

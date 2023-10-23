@@ -6,7 +6,6 @@ import { AuthApis, endpoints } from "../../configs/Apis";
 const ThemChuDeGV = () => {
     const [user, dispatch] = useContext(MyUserConText);
     const [noiDung, setNoiDung] = useState();
-    const [cauhoi, setcauhoi] = useState([]);
     let nav = useNavigate();
     const [q] = useSearchParams();
 
@@ -20,8 +19,7 @@ const ThemChuDeGV = () => {
                 ch = `${ch}?cauhoiId=${cauhoiid}`;
             }
             let res = await AuthApis().get(ch);
-            setcauhoi(res.data);
-            setNoiDung(res.data.noiDungCauHoi)
+            setNoiDung(res.data[0]);
 
         }
         loadcauhoi();

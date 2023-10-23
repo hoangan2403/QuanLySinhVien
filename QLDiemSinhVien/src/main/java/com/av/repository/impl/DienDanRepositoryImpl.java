@@ -162,14 +162,24 @@ public class DienDanRepositoryImpl implements DienDanRepository {
         CriteriaBuilder b = session.getCriteriaBuilder();
         CriteriaQuery<Object[]> q = b.createQuery(Object[].class);
         Root<Traloidiendan> rTraLoi = q.from(Traloidiendan.class);
+        Root<Cauhoidiendang> rCauHoi = q.from(Cauhoidiendang.class);
         q.select(b.array(rTraLoi))
                 .where(b.equal(rTraLoi.get("idCauHoiDienDan"), p.getIdCauHoiDienDan()));
         Query query = session.createQuery(q);
+
         List<Traloidiendan> traloi = query.getResultList();
+
+        q.select(b.array(rCauHoi))
+                .where(b.equal(rCauHoi.get("idCauHoiDienDan"), p.getIdCauHoiDienDan()));
+
+        q.groupBy(rCauHoi.get("idCauHoiDienDan"));
+        Query query1 = session.createQuery(q);
+        Cauhoidiendang a = (Cauhoidiendang) query1.getSingleResult();
+
         for (Traloidiendan tl : traloi) {
             session.delete(tl);
         }
-        session.delete(p);
+        session.delete(a);
         return true;
     }
 

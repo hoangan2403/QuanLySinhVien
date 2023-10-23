@@ -117,8 +117,11 @@ public class MonHocRepositoryImpl implements MonHocRepository {
         Session session = this.factory.getObject().getCurrentSession();
         Monhoc mh = this.getMonHocById(id);
         try {
-            session.delete(mh);
-            return true;
+            if (this.getMonHocHocKyByIdMonHoc(id)) {
+                session.delete(mh);
+                return true;
+            }
+            return false;
         } catch (HibernateException ex) {
             ex.printStackTrace();
             return false;
@@ -308,7 +311,7 @@ public class MonHocRepositoryImpl implements MonHocRepository {
         Date currentDate = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant());
         predicates.add(b.and(
                 b.lessThanOrEqualTo(rMonHocHocKy.get("idHocky").get("ngayDangKy"), currentDate),
-                b.greaterThanOrEqualTo(rMonHocHocKy.get("idHocky").get("ngayKetThuc"), currentDate)
+                b.greaterThanOrEqualTo(rMonHocHocKy.get("idHocky").get("ngayHetHan"), currentDate)
         ));
 
         q.select(rMonHocDangKy).where(predicates.toArray(Predicate[]::new));
@@ -374,6 +377,33 @@ public class MonHocRepositoryImpl implements MonHocRepository {
         long countMH = s.createQuery(q).uniqueResult();
 
         return countMH;
+
+    }
+
+    @Override
+    public boolean getMonHocHocKyByIdMonHoc(int id) {
+        Session s = this.factory.getObject().getCurrentSession();
+        CriteriaBuilder b = s.getCriteriaBuilder();
+        CriteriaQuery<Object> q = b.createQuery(Object.class);
+        Root rMonHoc = q.from(MonhocHocky.class);
+        q.select(rMonHoc);
+
+        List<Predicate> predicates = new ArrayList<>();
+        predicates.add(b.equal(rMonHoc.get("idMonHoc"), id));
+        q.where(predicates.toArray(new Predicate[0]));
+        Query query = s.createQuery(q);
+        try {
+            List<MonhocHocky> monHoc = query.getResultList();
+            if (monHoc.isEmpty()) {
+                return true;
+            } else {
+                // Process the non-empty lopHoc list here if needed
+                return false;
+            }
+        } catch (NoResultException | NonUniqueResultException ex) {
+            ex.printStackTrace();
+            return false;
+        }
 
     }
 

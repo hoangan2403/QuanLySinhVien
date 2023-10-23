@@ -92,11 +92,12 @@
                     </form:select>
                     </td>
                     <td>
+                        
                         <form:select class="form-selector" name="class" path="listGiangviens"  required="required">
-                                <c:forEach items="${giangvien}" var="gv">
-                                    <option value="${gv.idGiangVien}">${gv.hoTen}</option>
-                                </c:forEach>
-                        </form:select>
+                            <c:forEach items="${giangvien}" var="gv">
+                            <option value="${gv.idGiangVien}">${gv.hoTen}</option>
+                        </c:forEach>
+                    </form:select>
                     </td>
 
                     <td> 
@@ -125,6 +126,10 @@
     </div>
 </div>
 <script>
+
+    
+
+
     function submitForm() {
         document.forms[0].submit();
     }

@@ -3,6 +3,7 @@ import { GiangVienContext, MyUserConText } from "../../App";
 import { useContext, useState } from "react";
 import Apis, { AuthApis, endpoints } from "../../configs/Apis";
 import MySpinner from "../../layout/MySpinner";
+import Header from "../../layout/giangVien/Header";
 
 
 const ThayDoiMatKhauGV = () => {
@@ -66,27 +67,7 @@ const ThayDoiMatKhauGV = () => {
     }
     return (
         <div class="contend">
-            <nav class="navbar navbar-1 navbar-expand-sm navbar-dark nav-menu">
-                <div class="container-fluid">
-                    <a class="navbar-brand dark-color header-logo " href="#"><i class="fa-solid fa-bell icon-padding"></i></a>
-                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                        <ul class="navbar-nav">
-                            <li class="nav-item user-name-img">
-                                <a class="nav-link dark-color" href="#"><i class="fa-solid fa-user icon-padding" ></i></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle dark-color" href="#" role="button" data-bs-toggle="dropdown">Chào,
-                                    {giangvien.hoTen}</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item dark-color " href="#"><i class="fa-solid fa-user icon-padding"></i>Thông Tin Tài Khoản</a></li>
-                                    <li><a class="dropdown-item dark-color" href="#"><i class="fa-solid fa-key icon-padding"></i>Thay Đổi Mật Khẩu</a></li>
-                                    <li><a class="dropdown-item dark-color" href="#"><i class="fa-solid fa-right-to-bracket icon-padding"></i>Đăng Xuất</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <Header />
             <div class="change-password">
                 <p class="change-password-title">Thay Đổi Mật Khẩu</p>
                 <Form onSubmit={changePass} class="change-password-form">

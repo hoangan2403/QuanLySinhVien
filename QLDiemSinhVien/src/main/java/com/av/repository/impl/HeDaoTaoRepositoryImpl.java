@@ -114,8 +114,9 @@ public class HeDaoTaoRepositoryImpl implements HeDaoTaoRepository{
         try {
             if (countHDT == 0) {
                 session.delete(hdt);
+                return true;
             }
-            return true;
+            return false;
         } catch (HibernateException e) {
             e.printStackTrace();
             return false;

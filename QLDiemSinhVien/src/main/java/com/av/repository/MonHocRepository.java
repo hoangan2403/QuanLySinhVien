@@ -37,4 +37,5 @@ public interface MonHocRepository {
     MonhocHocky getMonHocHocKyDate(int idMonHoc);
     
     boolean thanhToanHocPhi(Map<String, String> params);
+    boolean getMonHocHocKyByIdMonHoc(int id);
 }

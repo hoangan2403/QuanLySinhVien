@@ -24,7 +24,7 @@
                 <form:hidden path="listSoLuong"/>
                 <form:hidden path="listPhonghocs"/>
                 <div class="form-floating mb-3 mt-3">
-                    <form:input type="number" path="soLuong" class="form-control" id="name" placeholder="Số lượng" name="name" required="true"/>
+                    <form:input type="number" path="soLuong" class="form-control" id="name" placeholder="Số lượng" name="name" required="required"/>
                     <label for="name">Số lượng</label>
                 </div>
                 <div class="form-floating mt-3 mb-3">
@@ -43,7 +43,7 @@
                     <label for="class">Phòng học</label>                
                 </div>
                 <div class="form-floating mt-3 mb-3">
-                    <form:select class="form-select" id="classGV" name="classGV" path="idGiangVien" required="true">
+                    <form:select class="form-select" id="classGV" name="classGV" path="idGiangVien" required="required">
                         <c:forEach items="${giangvien}" var="gv">
                             <c:choose>
                                 <c:when test="${gv.idGiangVien == phieumonhoc.idGiangVien.idGiangVien}">
@@ -58,11 +58,11 @@
                     <label for="classGV">Giảng viên</label>                
                 </div>
                 <div class="form-floating mb-3 mt-3">
-                    <form:input type="date" path="ngayBatDau" class="form-control" id="startdate" placeholder="Ngày bắt đầu" name="startdate" required="true"/>
+                    <form:input type="date" path="ngayBatDau" class="form-control" id="startdate" placeholder="Ngày bắt đầu" name="startdate" required="required"/>
                     <label for="startdate">Ngày bắt đầu</label>
                 </div>
                 <div class="form-floating mb-3 mt-3">
-                    <form:input type="date" path="ngayKetThuc" class="form-control" id="enddate" placeholder="Ngày kết thúc" name="enddate" required="true"/>
+                    <form:input type="date" path="ngayKetThuc" class="form-control" id="enddate" placeholder="Ngày kết thúc" name="enddate" required="required"/>
                     <label for="enddate">Ngày kết thúc</label>
                 </div>
                 <div class="btn-form-addsv">

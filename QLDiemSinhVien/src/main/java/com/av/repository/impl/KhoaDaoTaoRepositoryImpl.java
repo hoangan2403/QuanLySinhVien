@@ -326,9 +326,10 @@ public class KhoaDaoTaoRepositoryImpl implements KhoaDaoTaoRepository {
         try {
             if (countNDT == 0) {
                 s.delete(kdt);
+                return true;
             } 
             
-            return true;
+            return false;
         } catch (HibernateException e) {
             e.printStackTrace();
             return false;
@@ -358,8 +359,9 @@ public class KhoaDaoTaoRepositoryImpl implements KhoaDaoTaoRepository {
         try {
             if (count == 0) {
                 s.delete(k);
+                return true;
             }
-            return true;
+            return false;
         } catch (HibernateException e) {
             e.printStackTrace();
             return false;
@@ -374,8 +376,9 @@ public class KhoaDaoTaoRepositoryImpl implements KhoaDaoTaoRepository {
         try {
             if (countPh == 0) {
                 session.delete(ph);
+                return true;
             }
-            return true;
+            return false;
         } catch (HibernateException e) {
             e.printStackTrace();
             return false;

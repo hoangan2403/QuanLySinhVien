@@ -298,6 +298,7 @@ public class DiemServiceImpl implements DiemService {
         Short a = 0;
         monHoc.setKhoaMon(a);
         monHoc.setTrangThai(a);
+        monHoc.setThanhToan(a);
         this.diemRepository.dangKyMonHoc(monHoc, monHocHocKy);
         return true;
 

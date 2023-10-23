@@ -24,7 +24,7 @@
             <form:form modelAttribute="hedaotaoo" method="post" action="${action}" >
                 <form:hidden path="idhedaotao"/>
                 <div class="form-floating mb-3 mt-3">
-                    <form:input type="text" path="tenHeDaoTao" class="form-control" id="name" placeholder="Tên hệ đào tạo" name="name" required="true"/>
+                    <form:input type="text" path="tenHeDaoTao" class="form-control" id="name" placeholder="Tên hệ đào tạo" name="name" required="required"/>
                     <label for="name">Tên hệ đào tạo</label>
                 </div>
                 <div class="btn-form-addsv">

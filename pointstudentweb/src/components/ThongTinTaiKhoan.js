@@ -23,8 +23,8 @@ const Thongtintaikhoan = () => {
         "matKhau": user.matKhau,
         "chucVu": user.chucVu.tenloaitaikhoan,
     });
-    
-      
+
+
 
     const updateImage = (evt) => {
         evt.preventDefault();
@@ -33,23 +33,30 @@ const Thongtintaikhoan = () => {
 
         const process = async () => {
             let form = new FormData();
+            if (avatar.current.files[0].type.startsWith('image/')) {
+                for (let field in taiKhoan)
 
-            for (let field in taiKhoan)
+                    form.append(field, taiKhoan[field]);
 
-                form.append(field, taiKhoan[field]);
+                form.append("avatar", avatar.current.files[0]);
 
-            form.append("avatar", avatar.current.files[0]);
+                setLoading(true)
+                let res = await AuthApis().post(endpoints['udateImage'], form);
 
-            setLoading(true)
-            let res = await AuthApis().post(endpoints['udateImage'], form);
-            
-            let { data } = await AuthApis().get(endpoints['current-user']);
-            cookie.remove("user");
-            cookie.save("user", data);
-            dispatch({
-                "type": "login",
-                "payLoad": data
-              })
+                let { data } = await AuthApis().get(endpoints['current-user']);
+                cookie.remove("user");
+                cookie.save("user", data);
+                dispatch({
+                    "type": "login",
+                    "payLoad": data
+                })
+
+            } else {
+                // Tệp không phải là tệp ảnh
+                alert("Đây không phải là tệp ảnh.");
+            }
+
+
         }
         if (avatar.current.files.length > 0) {
             process();
@@ -64,7 +71,7 @@ const Thongtintaikhoan = () => {
     return (
 
         <div class="contend">
-            <HeaderSV  />
+            <HeaderSV />
             <div class="info-user">
                 <div class="info-title-user">
                     {user.image === null ? <p class="info-user-image"><i class="fa-solid fa-user icon-padding"></i></p> : <div class="info-user-image-2" ><img class="img-user-avatar" src={user.image} alt="Ảnh đại diện" /></div>}

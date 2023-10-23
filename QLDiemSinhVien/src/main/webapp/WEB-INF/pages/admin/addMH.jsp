@@ -25,7 +25,7 @@
                 <form:hidden path="idMonHoc"/>
                 <%--<form:hidden path="idGiangVien"/>--%>
                 <div class="form-floating mb-3 mt-3">
-                    <form:input type="text" class="form-control" path="tenMonHoc"  id="name" placeholder="Tên Môn học" name="name" />
+                    <form:input type="text" class="form-control" path="tenMonHoc"  id="name" placeholder="Tên Môn học" name="name" required="required"/>
                     <label for="name">Tên môn học</label>
                 </div>
                 <!--                <div class="form-floating mb-3 mt-3">
@@ -33,7 +33,7 @@
                 <label for="examform">Hình thức thi</label>
             </div>-->
                 <div class="form-floating mb-3 mt-3">
-                    <form:input type="number" class="form-control" path="soTinChi"  id="number" placeholder="Số tín chỉ" name="number" />
+                    <form:input type="number" class="form-control" path="soTinChi"  id="number" placeholder="Số tín chỉ" name="number" required="required"/>
                     <label for="number">Số tín chỉ</label>
                 </div>
                 <!--                <div class="form-floating mb-3 mt-3">
